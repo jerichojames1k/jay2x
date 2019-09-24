@@ -1,6 +1,6 @@
 //import Auth from '../services/auth'
 let  beforeEnter =(to,from,next)=>{
-    Auth.currentPath=to.path
+    //Auth.currentPath=to.path
     let userID=parseInt(localStorage.getItem(account_id))
     let token=localStorage.getItem('usertoken')
     next()
@@ -13,9 +13,9 @@ for(let x=0;x<devRoutes.length;x++){
 }
 let routes=[
     {
-        path: '/',
+        path: '/register',
         name: 'home',
-        component: resolve => require(['../modules/basic/Register.vue'], resolve),
+        component: resolve => require(['modules/basic/Register.vue'], resolve),
         beforeEnter: beforeEnter
     }
 ]
